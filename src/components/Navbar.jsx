@@ -5,10 +5,11 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [isHoveredLogo, setIsHoveredLogo] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+
   const [showTopNav, setShowTopNav] = useState(true);
+
   // Track when nav is wide enough to show menu
   const [showMenuList, setShowMenuList] = useState(false);
 
@@ -56,7 +57,7 @@ const Navbar = () => {
       >
         <div className="relative">
           {/* UNIVERSAL  Navbar */}
-          <div className="fixed top-0 left-0 z-40 flex w-full items-start justify-between px-6 pt-[16px] sm:px-8 sm:pt-[20px] md:px-10 md:pt-[24px]">
+          <div className="fixed top-0 left-0 z-40 flex w-full items-start justify-between px-6 pt-[16px] sm:px-8 sm:pt-[20px] md:px-10 md:pt-[24px] lg:items-center">
             <a
               href="/"
               className={
@@ -66,42 +67,62 @@ const Navbar = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="Layer_1"
-                data-name="Layer 1"
-                width="120"
-                height="40"
-                viewBox="0 0 120 40"
+                version="1.1"
+                viewBox="5 0 120 40"
+                onClick={() =>
+                  setIsHoveredLogo(isHoveredLogo === false && true)
+                }
+                className={`h-[50px] w-[140px] cursor-pointer select-none hover:opacity-50 lg:h-[70px] lg:w-[170px] ${
+                  isHoveredLogo ? "opacity-50" : "opacity-100"
+                } transition-opacity duration-300`}
               >
                 <defs>
                   <style
                     dangerouslySetInnerHTML={{
                       __html:
-                        "\n      .cls-1 {\n        fill: #231f20;\n        font-family: SansSerifBldFLF, SansSerifBldFLF;\n        font-size: 45.92px;\n      }\n    ",
+                        "\n      .st0 {\n        fill: #231f20;\n      }\n\n      .st1 {\n        fill: none;\n      }\n    ",
                     }}
                   />
                 </defs>
-                <text
-                  onClick={() =>
-                    setIsHoveredLogo(isHoveredLogo === false && true)
-                  }
-                  className={`cls-1 cursor-pointer select-none hover:opacity-50 ${
-                    isHoveredLogo ? "opacity-50" : "opacity-100"
-                  } transition-opacity duration-300`}
-                  transform="translate(0 39.35) scale(.98 1)"
-                >
-                  <tspan x={0} y={0}>
-                    adon.
-                  </tspan>
-                </text>
+                <g>
+                  <path
+                    className="st0"
+                    d="M29.95,34.34h-6.12v-1.16c-.92.68-2.32,1.56-5.52,1.56-6.12,0-9.16-4.76-9.16-9.52s3.04-9.52,9.16-9.52c3.08,0,4.64.68,5.52,1.44v-1.36h6.12v18.56ZM19.79,28.87c2.08,0,3.8-1.72,3.8-3.8s-1.72-3.8-3.8-3.8-3.8,1.72-3.8,3.8,1.72,3.8,3.8,3.8Z"
+                  />
+                  <path
+                    className="st0"
+                    d="M53.75,4.75v29.6h-6.12v-1.16c-.92.64-2.64,1.56-5.52,1.56-6.12,0-9.16-4.76-9.16-9.52s3.04-9.52,9.16-9.52c3.28,0,4.52.72,5.52,1.44V4.75h6.12ZM43.75,28.87c2.08,0,3.8-1.72,3.8-3.8s-1.72-3.8-3.8-3.8-3.8,1.72-3.8,3.8,1.72,3.8,3.8,3.8Z"
+                  />
+                  <path
+                    className="st0"
+                    d="M66.67,34.86c-6.76,0-10.16-4.84-10.16-9.76s3.4-9.76,10.16-9.76,10.04,4.92,10.04,9.76-3.28,9.76-10.04,9.76ZM66.63,28.95c2.16,0,3.8-1.72,3.8-3.8s-1.64-3.8-3.8-3.8-3.8,1.72-3.8,3.8,1.72,3.8,3.8,3.8Z"
+                  />
+                  <path
+                    className="st0"
+                    d="M79.35,15.95h6.88v1.68c.88-.88,2.36-2,5.92-2,4.96,0,7.24,2.6,7.24,7.2v11.52h-6.88v-10.04c0-2.24-.4-3.92-2.92-3.92-2.8,0-3.36,1.88-3.36,3.24v10.72h-6.88V15.95Z"
+                  />
+                  <path
+                    className="st0"
+                    d="M106.03,34.5c-1.92,0-3.44-1.52-3.44-3.44s1.52-3.44,3.44-3.44,3.44,1.52,3.44,3.44-1.52,3.44-3.44,3.44Z"
+                  />
+                </g>
+                <rect
+                  className="st1"
+                  x="28.88"
+                  y="18.03"
+                  width="17.12"
+                  height="1.29"
+                />
               </svg>
             </a>
 
             <ul className="hidden items-center gap-6 md:flex [&_a]:text-[18px] [&_a]:leading-[27px] [&_a]:text-black">
               {[
                 { label: "Projects", href: "/projects" },
-                { label: "Plans", href: "#plans" },
-                { label: "About Me", href: "#about-me" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Contact", href: "#contact" },
+                { label: "Plans", href: "/#plans" },
+                { label: "About Me", href: "/#about-me" },
+                { label: "FAQ", href: "/#faq" },
+                { label: "Contact", href: "/#contact" },
               ].map(({ label, href }) => (
                 <li key={label} className="group cursor-pointer">
                   <Link
@@ -138,24 +159,31 @@ const Navbar = () => {
               onClick={() => setMenuOpen((prev) => !prev)}
               type="button"
             >
+              {/* Top line */}
               <span
-                className={`absolute mt-2 block h-0.5 w-10 rounded bg-black transition-all duration-400 md:m-0 ${menuOpen ? "top-4 rotate-45" : "top-2"} `}
+                className={`absolute top-5 block h-0.5 w-10 rounded bg-black transition-all duration-300 ${
+                  menuOpen ? "translate-y-1.5 rotate-45" : ""
+                }`}
               ></span>
+
+              {/* Bottom line */}
               <span
-                className={`absolute mt-2 block h-0.5 w-10 rounded bg-black transition-all duration-400 md:m-0 ${menuOpen ? "top-4 -rotate-45" : "top-5"} `}
+                className={`absolute top-8 block h-0.5 w-10 rounded bg-black transition-all duration-300 ${
+                  menuOpen ? "-translate-y-1.5 -rotate-45" : ""
+                }`}
               ></span>
             </button>
 
             {/* MOBILE NAV-MENU */}
 
             <nav
-              className={`fixed top-0 left-0 -z-20 h-full bg-white transition-all duration-300 ease-in-out ${
+              className={`fixed top-0 left-0 -z-20 h-[100%] bg-white transition-all duration-300 ease-in-out ${
                 menuOpen ? "w-full translate-x-0" : "w-0 -translate-x-full"
               } overflow-hidden`}
               style={{ transitionProperty: "width, transform" }}
             >
               <ul
-                className={`flex w-full flex-col pt-[180px] text-[#141413] transition-opacity duration-400 *:border-b *:border-[#eceff3] *:py-[20px] *:pr-[20px] *:pl-[30px] [&_a]:text-4xl [&_a]:font-medium ${showMenuList && menuOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
+                className={`flex w-full flex-col pt-[150px] text-[#141413] transition-opacity duration-400 *:border-b *:border-[#eceff3] *:py-[20px] *:pr-[20px] *:pl-[30px] [&_a]:text-4xl [&_a]:font-medium ${showMenuList && menuOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
                 style={{
                   transitionProperty: "opacity",
                 }}
@@ -172,10 +200,10 @@ const Navbar = () => {
                   const links = [
                     "/",
                     "/projects",
-                    "#plans",
-                    "#about-me",
-                    "#faq",
-                    "#contact",
+                    "/#plans",
+                    "/#about-me",
+                    "/#faq",
+                    "/#contact",
                   ];
                   return (
                     <li

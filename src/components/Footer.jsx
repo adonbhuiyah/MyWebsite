@@ -9,7 +9,7 @@ const Footer = (page) => {
     btn2: false,
   });
   return (
-    <div
+    <section
       id="contact"
       className="rounded-2xl bg-[#E8E8EA] px-4 pt-[80px] sm:rounded-3xl md:rounded-4xl md:pt-[120px] lg:rounded-[40px] lg:px-[50px] lg:pt-[100px] xl:w-full xl:rounded-[48px]"
     >
@@ -42,7 +42,7 @@ const Footer = (page) => {
               btn2: false,
             })
           }
-          className="group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-black px-8 py-4 text-[28px] font-semibold text-[#141413] transition-transform duration-800 ease-out hover:scale-105 focus:scale-105 sm:hidden xl:flex xl:h-fit xl:py-10"
+          className="group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-black p-[32px] text-[28px] font-semibold text-[#141413] transition-transform duration-800 ease-out hover:scale-105 focus:scale-105 sm:hidden xl:flex xl:h-fit xl:py-10"
         >
           {/* Background video */}
           <video
@@ -148,10 +148,10 @@ const Footer = (page) => {
           </h1>
           {[
             { label: "Projects", href: "/projects" },
-            { label: "Plans", href: "#plans" },
-            { label: "About Me", href: "#about-me" },
-            { label: "FAQ", href: "#faq" },
-            { label: "Contact", href: "#contact" },
+            { label: "Plans", href: "/#plans" },
+            { label: "About Me", href: "/#about-me" },
+            { label: "FAQ", href: "/#faq" },
+            { label: "Contact", href: "/#contact" },
           ].map(({ label, href }) => (
             <li key={label} className="group cursor-pointer">
               <Link
@@ -176,10 +176,10 @@ const Footer = (page) => {
           </h1>
           {[
             { label: "Projects", href: "/projects" },
-            { label: "Plans", href: "#plans" },
-            { label: "About Me", href: "#about-me" },
-            { label: "FAQ", href: "#faq" },
-            { label: "Contact", href: "#contact" },
+            { label: "Plans", href: "/#plans" },
+            { label: "About Me", href: "/#about-me" },
+            { label: "FAQ", href: "/#faq" },
+            { label: "Contact", href: "/#contact" },
           ].map(({ label, href }) => (
             <li key={label} className="group cursor-pointer">
               <Link
@@ -223,7 +223,7 @@ const Footer = (page) => {
               btn2: false,
             })
           }
-          className="group relative hidden cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-black px-8 py-4 text-[28px] font-semibold text-[#141413] transition-transform duration-800 ease-out hover:scale-105 focus:scale-105 sm:flex sm:h-fit md:py-8 lg:py-10 xl:hidden"
+          className="group relative hidden cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-black p-[32px] text-[28px] font-semibold text-[#141413] transition-transform duration-800 ease-out hover:scale-105 focus:scale-105 sm:flex sm:h-fit md:py-8 lg:py-10 xl:hidden"
         >
           {/* Background video */}
           <video
@@ -249,26 +249,29 @@ const Footer = (page) => {
         </Link>
       </div>
 
-      {/* LOGO SVG */}
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 115 35">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        viewBox="2 0 115 30"
+        fill="#CACACC"
+      >
         <defs>
           <style
             dangerouslySetInnerHTML={{
-              __html:
-                "\n      .cls-2 {\n        fill: #CACACC;\n        font-family: SansSerifBldFLF, SansSerifBldFLF;\n        font-size: 45.92px;\n      }\n    ",
+              __html: "\n    .st3 {\n        fill: none;\n      }\n    ",
             }}
           />
         </defs>
-        <text
-          className={`cls-2 cursor-pointer select-none`}
-          transform="translate(0 39.35) scale(.98 1)"
-        >
-          <tspan x={0} y={0}>
-            adon.
-          </tspan>
-        </text>
+        <g>
+          <path d="M29.95,34.34h-6.12v-1.16c-.92.68-2.32,1.56-5.52,1.56-6.12,0-9.16-4.76-9.16-9.52s3.04-9.52,9.16-9.52c3.08,0,4.64.68,5.52,1.44v-1.36h6.12v18.56ZM19.79,28.87c2.08,0,3.8-1.72,3.8-3.8s-1.72-3.8-3.8-3.8-3.8,1.72-3.8,3.8,1.72,3.8,3.8,3.8Z" />
+          <path d="M53.75,4.75v29.6h-6.12v-1.16c-.92.64-2.64,1.56-5.52,1.56-6.12,0-9.16-4.76-9.16-9.52s3.04-9.52,9.16-9.52c3.28,0,4.52.72,5.52,1.44V4.75h6.12ZM43.75,28.87c2.08,0,3.8-1.72,3.8-3.8s-1.72-3.8-3.8-3.8-3.8,1.72-3.8,3.8,1.72,3.8,3.8,3.8Z" />
+          <path d="M66.67,34.86c-6.76,0-10.16-4.84-10.16-9.76s3.4-9.76,10.16-9.76,10.04,4.92,10.04,9.76-3.28,9.76-10.04,9.76ZM66.63,28.95c2.16,0,3.8-1.72,3.8-3.8s-1.64-3.8-3.8-3.8-3.8,1.72-3.8,3.8,1.72,3.8,3.8,3.8Z" />
+          <path d="M79.35,15.95h6.88v1.68c.88-.88,2.36-2,5.92-2,4.96,0,7.24,2.6,7.24,7.2v11.52h-6.88v-10.04c0-2.24-.4-3.92-2.92-3.92-2.8,0-3.36,1.88-3.36,3.24v10.72h-6.88V15.95Z" />
+          <path d="M106.03,34.5c-1.92,0-3.44-1.52-3.44-3.44s1.52-3.44,3.44-3.44,3.44,1.52,3.44,3.44-1.52,3.44-3.44,3.44Z" />
+        </g>
+        <rect className="st3" x="28.88" y="18.03" width="17.12" height="1.29" />
       </svg>
-    </div>
+    </section>
   );
 };
 

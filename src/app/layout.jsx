@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import HashSmoothScroll from "@/components/HashSmoothScroll";
 import { Merriweather } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import NavbarClient from "@/components/NavbarClient";
 import { localFont } from "next/font/local";
 
 const helvetica = localFont({
@@ -276,15 +277,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="hydrated">
       <body
-        className={`${helvetica.className} ${merriweather.variable} scroll-smooth`}
+        className={`${helvetica.className} ${merriweather.variable} overflow-y-scroll scroll-smooth`}
         cz-shortcut-listen="true"
       >
-        <Navbar />
-
-        <HashSmoothScroll />
-        {children}
-        <Footer />
-        <Copyright />
+        {/* Client logic lives inside NavbarClient */}
+        <NavbarClient>
+          <HashSmoothScroll />
+          {children}
+          <Footer />
+          <Copyright />
+        </NavbarClient>
       </body>
     </html>
   );

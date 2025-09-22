@@ -57,7 +57,7 @@ const AboutMe = () => {
     },
   ];
   return (
-    <div
+    <section
       id="about-me"
       className="mt-[100px] w-full rounded-[20px] bg-black px-6 py-[80px] md:rounded-[30px] md:py-[120px] lg:rounded-[40px] lg:px-[50px] lg:py-[150px] xl:px-[100px]"
     >
@@ -135,7 +135,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

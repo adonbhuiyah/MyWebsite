@@ -20,7 +20,7 @@ export default function Hero() {
       className="flex flex-col items-center justify-center px-4 pt-[180px] pb-[40px] text-center"
     >
       {/* Top Intro */}
-      <p className="mb-6 hidden items-center justify-center gap-2 text-[16px] text-[#424242] md:flex">
+      <p className="mb-4 flex items-center justify-center gap-2 text-[15px] text-[#424242] md:mb-6 md:text-[16px]">
         <Image
           src={helloGif}
           alt="Hello GIF"

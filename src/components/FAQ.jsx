@@ -57,7 +57,7 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div
+    <section
       id="faq"
       className="flex flex-col gap-[60px] px-6 py-[60px] lg:flex-row lg:items-start lg:gap-[50px] lg:px-[50px] lg:py-[100px] xl:mx-auto xl:w-[1500px]"
     >
@@ -117,7 +117,7 @@ const FAQ = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
