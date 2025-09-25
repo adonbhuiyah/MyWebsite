@@ -1,12 +1,28 @@
 {
   "rewrites": [
     {
+      "source": "/projects/pulse-robot/:path*",
+      "destination": "https://pulse-robots.vercel.app/:path*"
+    },
+    {
       "source": "/projects/atlas-chat/:path*",
       "destination": "https://atlas-ai-chat.vercel.app/:path*"
     },
     {
-      "source": "/projects/pulse-robot/:path*",
-      "destination": "https://pulse-robots.vercel.app/:path*"
+      "source": "/projects/lolosol/:path*",
+      "destination": "https://lolosol.vercel.app/:path*"
+    },
+    {
+      "source": "/projects/deepseek/:path*",
+      "destination": "https://deepseek-adon.vercel.app/:path*"
+    },
+    {
+      "source": "/projects/chillguy/:path*",
+      "destination": "https://chillguy-adon.vercel.app/:path*"
+    },
+    {
+      "source": "/projects/tariff-coin/:path*",
+      "destination": "https://tariff-coin.vercel.app/:path*"
     }
   ]
 }
