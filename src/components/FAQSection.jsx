@@ -51,7 +51,7 @@ const faqs = [
       "Yes, I provide free basic support for a few days after delivery. If you need long-term maintenance, I also offer that as a separate service.",
   },
 ];
-const FAQ = () => {
+const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -61,6 +61,7 @@ const FAQ = () => {
       id="faq"
       className="flex flex-col gap-[60px] px-6 py-[60px] lg:flex-row lg:items-start lg:gap-[50px] lg:px-[50px] lg:py-[100px] xl:mx-auto xl:w-[1500px]"
     >
+      {/* FAQ Section left side */}
       <div className="flex flex-col items-start justify-center gap-4">
         <h1 className="bg-gradient-to-b from-black to-[#838383] bg-clip-text text-left text-[30px] font-bold text-transparent lg:text-[37px] xl:text-[40px]">
           <span className="">Frequently</span> <span>asked questions</span>
@@ -77,13 +78,15 @@ const FAQ = () => {
           </Link>
         </p>
       </div>
-      {/* FAQs */}
+      {/* FAQ section right side */}
       <div className="flex w-full flex-col gap-3 text-[18px] lg:text-[21px] xl:text-[22px]">
         {faqs.map((faq, index) => (
+          // /each FAQ div
           <div
             key={index}
             className={`flex cursor-pointer flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#F7F7F7] px-1 py-2 transition-all duration-500 sm:items-start`}
           >
+            {/* FAQ question display */}
             <div
               onClick={() => toggleFAQ(index)}
               className="flex w-full justify-between gap-2 p-4 font-medium text-black transition-colors duration-300"
@@ -108,7 +111,7 @@ const FAQ = () => {
                 </g>
               </svg>
             </div>
-
+            {/* FAQ answer display */}
             <div
               className={`overflow-hidden pr-[15px] pl-4 text-[17px] whitespace-pre-line transition-all duration-700 sm:pr-[80px] md:duration-300 lg:text-[17px] ${openIndex === index ? "max-h-[500px] pb-4 opacity-100" : "max-h-0 pb-0 opacity-0"}`}
             >
@@ -121,4 +124,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FAQSection;

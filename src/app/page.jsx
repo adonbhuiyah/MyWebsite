@@ -1,21 +1,20 @@
-import AboutMe from "@/components/AboutMe";
+import AboutMeSection from "@/components/AboutMeSection";
+// this navbar shows when top navbar hides
 import BottomNavbar from "@/components/BottomNavbar";
-import Copyright from "@/components/Copyright";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Plans from "@/components/Plans";
-import Project from "@/components/Project";
+import FAQSection from "@/components/FAQSection";
+import HeroSection from "@/components/HeroSection";
+import PlansSection from "@/components/PlansSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <BottomNavbar />
-      <Project />
-      <Plans />
-      <AboutMe />
-      <FAQ />
+      <ProjectsSection />
+      <PlansSection />
+      <AboutMeSection />
+      <FAQSection />
     </>
   );
 }

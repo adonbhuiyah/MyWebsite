@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
-#hero-heading {
-  line-height: 35px;
+@layer utilities {
+  .font-merriweather {
+    font-family: var(--font-merriweather), serif;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #hero-heading {
+    line-height: 35px;
+  }
 }
+
 @media screen and (min-width: 768px) {
   #hero-heading {
     line-height: 55px;
@@ -23,17 +35,5 @@
 @media screen and (min-width: 1536px) {
   #hero-heading {
     line-height: 96px;
-  }
-}
-
-@layer utilities {
-  .font-merriweather {
-    font-family: var(--font-merriweather), serif;
-  }
-
-  .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }

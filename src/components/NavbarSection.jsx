@@ -2,9 +2,17 @@
 
 import { useEffect, useRef } from "react";
 
+import { LetsTalkBtn } from "./Btns";
 import Link from "next/link";
 import { useState } from "react";
 
+export const NavbarLinks = [
+  { label: "Projects", url: "/projects" },
+  { label: "Plans", url: "/#plans" },
+  { label: "About Me", url: "/#about-me" },
+  { label: "FAQ", url: "/#faq" },
+  { label: "Contact", url: "/#contact" },
+];
 const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [isHoveredLogo, setIsHoveredLogo] = useState(false);
 
@@ -34,10 +42,8 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
     const workSection = document.querySelector("#projects"); // adjust if your Work section ID is different
     const handleScroll = () => {
       if (!workSection) return;
-      const rect = workSection.getBoundingClientRect();
+
       const scrollY = window.scrollY;
-      const sectionHeight = workSection.offsetHeight;
-      const halfway = rect.top + scrollY + sectionHeight / 3;
 
       if (scrollY >= 200) {
         setShowTopNav(false); // hide top navbar
@@ -58,6 +64,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div className="relative">
           {/* UNIVERSAL  Navbar */}
           <div className="fixed top-0 left-0 z-40 flex w-full items-start justify-between px-6 pt-[16px] sm:px-8 sm:pt-[20px] md:px-10 md:pt-[24px] lg:items-center">
+            {/* My LOGO */}
             <a
               href="/"
               className={
@@ -115,18 +122,12 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                 />
               </svg>
             </a>
-
+            {/* NAV-MENU */}
             <ul className="hidden items-center gap-6 md:flex [&_a]:text-[18px] [&_a]:leading-[27px] [&_a]:text-black">
-              {[
-                { label: "Projects", href: "/projects" },
-                { label: "Plans", href: "/#plans" },
-                { label: "About Me", href: "/#about-me" },
-                { label: "FAQ", href: "/#faq" },
-                { label: "Contact", href: "/#contact" },
-              ].map(({ label, href }) => (
+              {NavbarLinks.map(({ label, url }) => (
                 <li key={label} className="group cursor-pointer">
                   <Link
-                    href={href}
+                    href={url}
                     className="relative block h-8 w-max overflow-hidden font-medium"
                   >
                     <span className="flex h-full w-full items-center justify-start px-2 transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
@@ -138,21 +139,9 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                   </Link>
                 </li>
               ))}
-              <li className="group">
-                <Link
-                  href="https://tally.so/r/31jyp1"
-                  target="_blank"
-                  className="relative flex h-[47px] w-max items-center justify-center overflow-hidden rounded-full border-2 border-black px-5 font-bold transition-transform duration-300 group-hover:scale-105"
-                >
-                  <span className="flex h-full w-full items-center justify-center text-[18px] leading-[27px] text-black transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                    Let's talk
-                  </span>
-                  <span className="absolute top-0 left-0 flex h-full w-full translate-y-full items-center justify-center bg-black text-[18px] leading-[27px] text-white transition-transform duration-500 ease-in-out group-hover:translate-y-0">
-                    SAY HI
-                  </span>
-                </Link>
-              </li>
+              <LetsTalkBtn />
             </ul>
+            {/* Let's talk button */}
             <button
               className="relative z-30 flex h-12 w-12 flex-col items-center justify-center md:hidden"
               aria-label="Toggle menu"
@@ -183,7 +172,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
               style={{ transitionProperty: "width, transform" }}
             >
               <ul
-                className={`flex w-full flex-col pt-[150px] text-[#141413] transition-opacity duration-400 *:border-b *:border-[#eceff3] *:py-[20px] *:pr-[20px] *:pl-[30px] [&_a]:text-4xl [&_a]:font-medium ${showMenuList && menuOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
+                className={`flex w-full flex-col pt-[200px] text-[#141413] transition-opacity duration-400 *:border-b *:border-[#eceff3] *:py-[20px] *:pr-[20px] *:pl-[30px] [&_a]:text-4xl [&_a]:font-medium ${showMenuList && menuOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
                 style={{
                   transitionProperty: "opacity",
                 }}

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-
-const ThankYou = () => {
+// This page is for separate routing path ---> /thank-you
+const ThankYouPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#F9FAFB] px-6">
       <div className="flex max-w-lg flex-col items-center justify-center gap-4 rounded-3xl bg-white p-10 text-center shadow-lg">
@@ -63,4 +63,4 @@ const ThankYou = () => {
   );
 };
 
-export default ThankYou;
+export default ThankYouPage;

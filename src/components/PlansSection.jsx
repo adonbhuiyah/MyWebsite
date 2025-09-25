@@ -8,44 +8,31 @@ export default function Plans() {
     monthly: true,
     fixedProject: false,
   });
+  const checkIconSVG = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-3 -2 20 20"
+      className={`h-[1lh] w-[25px] shrink-0 rounded-full p-1 ${isButtonActive.monthly ? "bg-black" : "bg-[#757575]"}`}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M6.0729 9.7882L12.1823 3.67881C12.5572 3.30391 13.1651 3.30391 13.54 3.67881V3.67881C13.9149 4.05371 13.9149 4.66157 13.54 5.03648L6.78 11.7964C6.38948 12.1869 5.75632 12.1869 5.36579 11.7964L2.67882 9.10942C2.30392 8.73452 2.30391 8.12668 2.67881 7.75177V7.75177C3.05372 7.37685 3.66157 7.37685 4.03648 7.75176L6.0729 9.7882Z"
+        fill="white"
+      />
+    </svg>
+  );
   const ListArray = [
     {
       id: 1,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-3 -2 20 20"
-          className={`rounded-full p-1 lg:w-[25px] ${isButtonActive.monthly ? "w-[50px] bg-black" : "w-[23px] bg-[#757575]"}`}
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.0729 9.7882L12.1823 3.67881C12.5572 3.30391 13.1651 3.30391 13.54 3.67881V3.67881C13.9149 4.05371 13.9149 4.66157 13.54 5.03648L6.78 11.7964C6.38948 12.1869 5.75632 12.1869 5.36579 11.7964L2.67882 9.10942C2.30392 8.73452 2.30391 8.12668 2.67881 7.75177V7.75177C3.05372 7.37685 3.66157 7.37685 4.03648 7.75176L6.0729 9.7882Z"
-            fill="white"
-          />
-        </svg>
-      ),
+      icon: checkIconSVG,
       title: isButtonActive.monthly
         ? `End-to-end full-stack development with MERN & Next.js`
         : `Full project with clear start and finish`,
     },
     {
       id: 2,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-3 -2 20 20"
-          width={50}
-          className={`rounded-full p-1 lg:w-[25px] ${isButtonActive.monthly ? "w-[50px] bg-black" : "w-[23px] bg-[#757575]"}`}
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.0729 9.7882L12.1823 3.67881C12.5572 3.30391 13.1651 3.30391 13.54 3.67881V3.67881C13.9149 4.05371 13.9149 4.66157 13.54 5.03648L6.78 11.7964C6.38948 12.1869 5.75632 12.1869 5.36579 11.7964L2.67882 9.10942C2.30392 8.73452 2.30391 8.12668 2.67881 7.75177V7.75177C3.05372 7.37685 3.66157 7.37685 4.03648 7.75176L6.0729 9.7882Z"
-            fill="white"
-          />
-        </svg>
-      ),
+      icon: checkIconSVG,
 
       title: isButtonActive.monthly
         ? `Scalable architecture and maintainable, production-ready code`
@@ -54,21 +41,7 @@ export default function Plans() {
     },
     {
       id: 3,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-3 -2 20 20"
-          width={50}
-          className={`rounded-full p-1 lg:w-[25px] ${isButtonActive.monthly ? "w-[50px] bg-black" : "w-[23px] bg-[#757575]"}`}
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.0729 9.7882L12.1823 3.67881C12.5572 3.30391 13.1651 3.30391 13.54 3.67881V3.67881C13.9149 4.05371 13.9149 4.66157 13.54 5.03648L6.78 11.7964C6.38948 12.1869 5.75632 12.1869 5.36579 11.7964L2.67882 9.10942C2.30392 8.73452 2.30391 8.12668 2.67881 7.75177V7.75177C3.05372 7.37685 3.66157 7.37685 4.03648 7.75176L6.0729 9.7882Z"
-            fill="white"
-          />
-        </svg>
-      ),
+      icon: checkIconSVG,
       title: isButtonActive.monthly
         ? `Continuous support and fast iterations for rapid delivery`
         : `Clear timeline and deliverables
@@ -77,21 +50,7 @@ export default function Plans() {
     },
     {
       id: 4,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-3 -2 20 20"
-          width={50}
-          className={`rounded-full p-1 lg:w-[25px] ${isButtonActive.monthly ? "w-[50px] bg-black" : "w-[23px] bg-[#757575]"}`}
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.0729 9.7882L12.1823 3.67881C12.5572 3.30391 13.1651 3.30391 13.54 3.67881V3.67881C13.9149 4.05371 13.9149 4.66157 13.54 5.03648L6.78 11.7964C6.38948 12.1869 5.75632 12.1869 5.36579 11.7964L2.67882 9.10942C2.30392 8.73452 2.30391 8.12668 2.67881 7.75177V7.75177C3.05372 7.37685 3.66157 7.37685 4.03648 7.75176L6.0729 9.7882Z"
-            fill="white"
-          />
-        </svg>
-      ),
+      icon: checkIconSVG,
       title: isButtonActive.monthly
         ? `Seamless integration with APIs, databases, and third-party services`
         : `Additional support after project completion
@@ -100,21 +59,7 @@ export default function Plans() {
     },
     {
       id: 5,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-3 -2 20 20"
-          width={50}
-          className={`rounded-full p-1 lg:w-[25px] ${isButtonActive.monthly ? "w-[50px] bg-black" : "w-[23px] bg-[#757575]"}`}
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6.0729 9.7882L12.1823 3.67881C12.5572 3.30391 13.1651 3.30391 13.54 3.67881V3.67881C13.9149 4.05371 13.9149 4.66157 13.54 5.03648L6.78 11.7964C6.38948 12.1869 5.75632 12.1869 5.36579 11.7964L2.67882 9.10942C2.30392 8.73452 2.30391 8.12668 2.67881 7.75177V7.75177C3.05372 7.37685 3.66157 7.37685 4.03648 7.75176L6.0729 9.7882Z"
-            fill="white"
-          />
-        </svg>
-      ),
+      icon: checkIconSVG,
       title: isButtonActive.monthly
         ? `Performance optimization & responsive design for all devices`
         : `
@@ -128,7 +73,7 @@ export default function Plans() {
     >
       {/* Header */}
       <h1
-        className={`font-merriweather mb-12 text-center text-[24px] font-bold text-[#5C5C5C]`}
+        className={`font-merriweather mb-12 text-center text-[24px] font-bold text-[#5C5C5C] sm:text-[42px] md:mb-16 md:text-[46px] lg:mb-20 lg:text-[53px] xl:text-[62px] 2xl:text-[72px]`}
       >
         My pricing is simple
       </h1>
@@ -201,7 +146,7 @@ export default function Plans() {
             return (
               <li
                 key={id}
-                className="flex w-fit flex-row items-center justify-center gap-3"
+                className="flex w-fit flex-row items-start justify-center gap-3"
               >
                 {icon}
                 {title}

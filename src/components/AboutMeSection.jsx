@@ -1,58 +1,35 @@
 import Image from "next/image";
 import React from "react";
-import myPic from "../../public/adon.png";
+import myPicture from "../../public/adon.png";
 
-const AboutMe = () => {
+const AboutMeSection = () => {
+  const SVGIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -4  32 32"
+      fill="none"
+      className="w-[52px]"
+    >
+      <path
+        d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
   const MySkills = [
     {
       id: 1,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 -4  32 32"
-          fill="none"
-          className="w-[52px]"
-        >
-          <path
-            d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
+      icon: SVGIcon,
       title: "Full-Stack Dev",
     },
     {
       id: 2,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 -4  32 32"
-          fill="none"
-          className="w-[52px]"
-        >
-          <path
-            d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
+      icon: SVGIcon,
       title: "Designer",
     },
     {
       id: 3,
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 -4  32 32"
-          fill="none"
-          className="w-[52px]"
-        >
-          <path
-            d="M11.8201 4L14.4574 4L20 11.5L14.4574 19H11.8201L14.3956 15.5239C15.467 14.0772 16.2294 13.066 16.6827 12.4902L5 12.4902L5 10.4888L16.6827 10.4888C16.1332 9.78652 15.3709 8.7823 14.3956 7.47612L11.8201 4Z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
+      icon: SVGIcon,
       title: "Solana Learner",
     },
   ];
@@ -62,6 +39,7 @@ const AboutMe = () => {
       className="mt-[100px] w-full rounded-[20px] bg-black px-6 py-[80px] md:rounded-[30px] md:py-[120px] lg:rounded-[40px] lg:px-[50px] lg:py-[150px] xl:px-[100px]"
     >
       <div className="lg:flex lg:gap-8 xl:gap-12 2xl:mx-auto 2xl:w-[1500px]">
+        {/* this is the left side of the about me section */}
         <div>
           <h1 className="mb-4 flex items-center justify-start gap-2 text-lg font-bold text-[#E84A24] md:text-[20px] lg:text-xl">
             <svg
@@ -92,17 +70,19 @@ const AboutMe = () => {
               </div>
             ))}
           </div>
-
+          {/* this picture hides if the screen is larger than 1024px */}
           <Image
-            src={myPic}
-            className="lg:w-[] mb-[63px] w-full rounded-lg object-cover md:rounded-3xl lg:hidden xl:rounded-4xl"
+            src={myPicture}
+            className="mb-[63px] w-full rounded-lg object-cover md:rounded-3xl lg:hidden xl:rounded-4xl"
             decoding="async"
             alt="My Picture"
           />
         </div>
-        <div className="flex flex-col items-start justify-center gap-6 text-[#EFEFEF] sm:flex-row sm:gap-12 lg:w-[680px] lg:flex-col lg:items-center xl:w-[760px] [&_p]:text-[18px] md:[&_p]:text-[20px]">
+        {/* this is the right side of the about me section */}
+        <div className="flex flex-col items-start justify-center gap-6 text-[#EFEFEF] sm:flex-row sm:gap-12 lg:w-[680px] lg:flex-col lg:items-center xl:w-[760px]">
+          {/* this picture shows if the screen is larger than 1024px */}
           <Image
-            src={myPic}
+            src={myPicture}
             className="hidden w-full rounded-lg object-cover md:rounded-3xl lg:block xl:rounded-4xl"
             decoding="async"
             alt="My Picture"
@@ -111,7 +91,7 @@ const AboutMe = () => {
           <h1 className="font-merriweather text-[30px] font-bold sm:text-[37px]">
             Hello there!
           </h1>
-          <div className="flex flex-col items-start justify-center gap-6">
+          <div className="flex flex-col items-start justify-center gap-6 [&_p]:text-[18px] md:[&_p]:text-[20px]">
             <p>
               <span className="text-[22px] lg:text-[24px] xl:text-[27px]">
                 👋{" "}
@@ -139,4 +119,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default AboutMeSection;

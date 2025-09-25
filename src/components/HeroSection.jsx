@@ -1,26 +1,20 @@
 "use client";
 
-import HeroBtns from "./HeroBtns";
 import Image from "next/image";
 import helloGif from "../../public/hello.gif";
 import shakeGif from "../../public/shake.gif";
-import { useState } from "react";
+import HeroBtns from "./Btns";
 
 // Import your image here
 
 export default function Hero() {
-  const [isButtonClicked, setIsButtonClicked] = useState({
-    projects: false,
-    aboutMe: false,
-  });
-
   return (
     <section
       id="home"
       className="flex flex-col items-center justify-center px-4 pt-[180px] pb-[40px] text-center"
     >
       {/* Top Intro */}
-      <p className="mb-4 flex items-center justify-center gap-2 text-[15px] text-[#424242] md:mb-6 md:text-[16px]">
+      <p className="mb-4 flex items-center justify-center gap-2 text-[15px] text-[#424242] sm:text-[16px] md:mb-6 md:text-[17px] lg:text-[18px]">
         <Image
           src={helloGif}
           alt="Hello GIF"

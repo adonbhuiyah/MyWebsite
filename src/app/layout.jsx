@@ -1,10 +1,12 @@
 import "./globals.css";
 
-import Copyright from "@/components/Copyright";
-import Footer from "@/components/Footer";
+import CopyrightSection from "@/components/CopyrightSection";
+import FooterSection from "@/components/FooterSection";
+// for smooth scrolling effect
 import HashSmoothScroll from "@/components/HashSmoothScroll";
+// special font
 import { Merriweather } from "next/font/google";
-import Navbar from "@/components/Navbar";
+// this is a wrapper of all section to prevent visible srollbar when mobile navbar open
 import NavbarClient from "@/components/NavbarClient";
 import { localFont } from "next/font/local";
 
@@ -262,30 +264,31 @@ export const metadata = {
     },
   },
 
-  // 🎨 Theme
+  charset: "UTF-8",
+};
+
+// For viewport + theme color
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
   ],
-
-  // 🕰️ Viewport & Charset
-  viewport: "width=device-width, initial-scale=1",
-  charset: "UTF-8",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="hydrated">
       <body
-        className={`${helvetica.className} ${merriweather.variable} overflow-y-scroll scroll-smooth`}
+        className={`${helvetica.className} ${merriweather.variable} overflow-y-scroll scroll-smooth xl:w-[1535px] 2xl:w-auto`}
         cz-shortcut-listen="true"
       >
         {/* Client logic lives inside NavbarClient */}
         <NavbarClient>
           <HashSmoothScroll />
           {children}
-          <Footer />
-          <Copyright />
+          <FooterSection />
+          <CopyrightSection />
         </NavbarClient>
       </body>
     </html>

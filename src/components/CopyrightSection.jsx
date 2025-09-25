@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const Copyright = () => {
+const CopyrightSection = () => {
   const [temp, setTemp] = useState(null);
   const [time, setTime] = useState("");
   const [currentHour, setCurrentHour] = useState(new Date().getHours());
@@ -27,7 +27,7 @@ const Copyright = () => {
       .catch((err) => console.error("Weather API error:", err));
   }, [currentHour]);
 
-  // ✅ Update time every second
+  // ✅ Update time every minutes
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -37,7 +37,7 @@ const Copyright = () => {
         hour12: true,
       });
       setTime(formattedTime);
-    }, 1000);
+    }, 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -47,11 +47,11 @@ const Copyright = () => {
       <h5>Adon ©2025</h5>
       <div className="flex items-center gap-2">
         <span>Dhaka</span>
-        <span>{temp ? `${temp}°C` : "Loading..."}</span>
-        <span>{time || "..."}</span>
+        <span>{temp ? `${temp}°C` : "32°C"}</span>
+        <span>{time || "10:10 AM"}</span>
       </div>
     </div>
   );
 };
 
-export default Copyright;
+export default CopyrightSection;
