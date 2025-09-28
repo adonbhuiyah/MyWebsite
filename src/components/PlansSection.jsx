@@ -158,7 +158,7 @@ export default function Plans() {
         {/* Price */}
         {isButtonActive.monthly ? (
           <div className="text-[16px] text-[#efefef]">
-            <p className="text-4xl font-bold">$4,000</p>
+            <p className="text-4xl font-bold">$8,000</p>
             <p>
               {" "}
               <span className="font-semibold">per month</span> billed monthly

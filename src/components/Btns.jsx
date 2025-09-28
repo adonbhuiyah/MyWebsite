@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 // Reusable Button Component
-export const HeroContactBtn = ({
+export const HeroAboutMeBtn = ({
   href = "#",
   label = "Click Me",
-  size = "default", // sm | default | lg
+  size = "default",
+  target = "_self", // sm | default | lg
 }) => {
   const sizeClasses = {
     sm: "h-[40px] px-4 text-sm",
@@ -15,6 +16,7 @@ export const HeroContactBtn = ({
   return (
     <Link
       href={href}
+      target={target === "_blank" ? "_blank" : "_self"}
       className={`group relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-black bg-white transition-transform duration-300 hover:scale-105 focus:scale-105 ${sizeClasses[size]} `}
     >
       {/* Hover background */}
@@ -47,7 +49,7 @@ export const HeroProjectBtn = ({ button }) => {
       href={
         button === "projects" ? "/projects" : "https://github.com/AdonBhuiyah"
       }
-      target={button === "projects" ? "" : "_blank"}
+      target={button === "github" ? "_blank" : "_self"}
       className={`group relative flex w-[132px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-black px-[5px] text-lg text-white transition-transform duration-300 hover:scale-102 focus:scale-102 sm:w-[140px] sm:p-[10px] lg:w-[150px] 2xl:text-[20px] ${button === "projects" ? "h-[53px]" : "h-[50px]"}`}
     >
       <span className="absolute inset-0 z-10 translate-x-[-100%] bg-black transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-focus:translate-x-0"></span>
@@ -95,7 +97,7 @@ const HeroBtns = () => {
     <div className="mt-6 flex space-x-3">
       <HeroProjectBtn button="projects" />
 
-      <HeroContactBtn href="#about-me" label="About Me" size="default" />
+      <HeroAboutMeBtn href="#about-me" label="About Me" size="default" />
     </div>
   );
 };

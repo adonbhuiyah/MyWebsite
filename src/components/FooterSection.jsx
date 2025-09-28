@@ -12,6 +12,7 @@ const SocialLinks = [
     url: "https://x.com/AdonBhuiyah",
   },
   { label: "GitHub", url: "https://github.com/AdonBhuiyah" },
+  { label: "GitLab", url: "https://gitlab.com/AdonBhuiyah" },
   { label: "LinkedIn", url: "https://linkedin.com/in/AdonBhuiyah" },
   { label: "Pinterest", url: "https://pinterest.com/AdonBhuiyah" },
   {

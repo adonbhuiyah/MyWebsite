@@ -42,10 +42,15 @@ export default function HashSmoothScroll() {
     };
 
     const handleClick = (e) => {
-      const anchor = e.target.closest('a[href^="#"]');
-      if (anchor) {
+      let hash = e.target.closest('a[href^="#"]');
+      hash =
+        e.target.tagName == "SPAN"
+          ? e.target.parentElement.getAttribute("href")?.split("/")[1]
+          : hash?.getAttribute("href");
+
+      if (hash) {
         e.preventDefault();
-        const hash = anchor.getAttribute("href");
+
         scrollToHash(hash);
       }
     };

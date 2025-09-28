@@ -1,6 +1,6 @@
 import Image from "next/image";
+import MyBannerImage from "../../public/MyBannerImage.png";
 import React from "react";
-import myPicture from "../../public/adon.png";
 
 const AboutMeSection = () => {
   const SVGIcon = (
@@ -72,7 +72,7 @@ const AboutMeSection = () => {
           </div>
           {/* this picture hides if the screen is larger than 1024px */}
           <Image
-            src={myPicture}
+            src={MyBannerImage}
             className="mb-[63px] w-full rounded-lg object-cover md:rounded-3xl lg:hidden xl:rounded-4xl"
             decoding="async"
             alt="My Picture"
@@ -82,7 +82,7 @@ const AboutMeSection = () => {
         <div className="flex flex-col items-start justify-center gap-6 text-[#EFEFEF] sm:flex-row sm:gap-12 lg:w-[680px] lg:flex-col lg:items-center xl:w-[760px]">
           {/* this picture shows if the screen is larger than 1024px */}
           <Image
-            src={myPicture}
+            src={MyBannerImage}
             className="hidden w-full rounded-lg object-cover md:rounded-3xl lg:block xl:rounded-4xl"
             decoding="async"
             alt="My Picture"

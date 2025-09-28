@@ -125,19 +125,18 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
             {/* NAV-MENU */}
             <ul className="hidden items-center gap-6 md:flex [&_a]:text-[18px] [&_a]:leading-[27px] [&_a]:text-black">
               {NavbarLinks.map(({ label, url }) => (
-                <li key={label} className="group cursor-pointer">
-                  <Link
-                    href={url}
-                    className="relative block h-8 w-max overflow-hidden font-medium"
-                  >
-                    <span className="flex h-full w-full items-center justify-start px-2 transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
-                      {label}
-                    </span>
-                    <span className="absolute top-0 left-0 flex h-full w-full translate-y-full items-center justify-start px-2 transition-transform duration-500 ease-in-out group-hover:translate-y-0">
-                      {label}
-                    </span>
-                  </Link>
-                </li>
+                <Link
+                  key={label}
+                  href={url}
+                  className="group relative block h-8 w-max cursor-pointer overflow-hidden font-medium"
+                >
+                  <span className="flex h-full w-full items-center justify-start px-2 transition-transform duration-500 ease-in-out group-hover:-translate-y-full">
+                    {label}
+                  </span>
+                  <span className="absolute top-0 left-0 flex h-full w-full translate-y-full items-center justify-start px-2 transition-transform duration-500 ease-in-out group-hover:translate-y-0">
+                    {label}
+                  </span>
+                </Link>
               ))}
               <LetsTalkBtn />
             </ul>
@@ -172,7 +171,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
               style={{ transitionProperty: "width, transform" }}
             >
               <ul
-                className={`flex w-full flex-col pt-[200px] text-[#141413] transition-opacity duration-400 *:border-b *:border-[#eceff3] *:py-[20px] *:pr-[20px] *:pl-[30px] [&_a]:text-4xl [&_a]:font-medium ${showMenuList && menuOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
+                className={`flex w-full flex-col pt-[150px] text-[#141413] transition-opacity duration-400 *:border-b *:border-[#eceff3] *:py-[20px] *:pr-[20px] *:pl-[30px] [&_a]:text-4xl [&_a]:font-medium ${showMenuList && menuOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
                 style={{
                   transitionProperty: "opacity",
                 }}
@@ -189,10 +188,10 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
                   const links = [
                     "/",
                     "/projects",
-                    "/#plans",
-                    "/#about-me",
-                    "/#faq",
-                    "/#contact",
+                    "#plans",
+                    "#about-me",
+                    "#faq",
+                    "#contact",
                   ];
                   return (
                     <li

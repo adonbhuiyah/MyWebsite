@@ -1,52 +1,52 @@
 "use client";
 
-import { HeroContactBtn, HeroProjectBtn } from "./Btns";
+import { HeroAboutMeBtn, HeroProjectBtn } from "./Btns";
 
 import { LetsTalkBtn } from "./Btns";
 
 export const projectsList = [
   {
     id: 0,
-    video: "/meme.mp4",
+    video: "/pulse-robot.mp4",
     title: "Pulse Robot —",
     desc: "A Solana-powered AI Robotics platform featuring Atlas, with tokenomics, live chat, wallet actions, and a sleek, responsive UI.",
-    url: "https://adonr.dev/projects/pulse-robot",
+    url: "https://pulse-robot.adonr.dev",
   },
   {
     id: 1,
-    video: "/meme.mp4",
+    video: "/atlas-chat.mp4",
     title: "Atlas Chat —",
     desc: "A sleek full-stack AI chatbot with dynamic chat, session Q&A, and responsive design built for speed, scale, and great UX.",
-    url: "https://adonr.dev/projects/atlas-ai",
+    url: "https://atlas-chat.adonr.dev",
   },
   {
     id: 2,
-    video: "/meme.mp4",
+    video: "/lolosol.mp4",
     title: "$LOLO SOL —",
     desc: "Street Culture Meets Lightning-Fast DeFi.",
-    url: "https://adonr.dev/projects/lolosol",
+    url: "https://lolosol.adonr.dev",
   },
   {
     id: 3,
-    video: "/meme.mp4",
+    video: "/chillguy.mp4",
     title: "Chill Guy —",
     desc: "An Ethereum-based zero-tax token featuring clear MetaMask/Uniswap purchase guides, transparent tokenomics, and a modern, community-focused UI.",
-    url: "https://adonr.dev/projects/chillguy",
+    url: "https://chillguy.adonr.dev",
   },
 
   {
     id: 4,
-    video: "/meme.mp4",
+    video: "/tariff-coin.mp4",
     title: "$TARIFF Coin —",
     desc: "Make Every Trade Pay. Maximizing Gains, One Tariff at a Time.",
-    url: "https://adonr.dev/projects/tariff-coin",
+    url: "https://tariff-coin.adonr.dev",
   },
   {
     id: 5,
-    video: "/meme.mp4",
+    video: "/deepseek.mp4",
     title: "DeepSeek AI —",
     desc: "Fully cloned with every feature chat, UI, UX, and more, powered by API magic.",
-    url: "https://adonr.dev/projects/deepseek",
+    url: "https://deepseek.adonr.dev",
   },
 ];
 const specificVideoStyle = [
@@ -97,8 +97,9 @@ export default function Projects({ page }) {
                   {project.desc}
                 </span>
               </h2>
-              <HeroContactBtn
+              <HeroAboutMeBtn
                 href={project.url}
+                target="_blank"
                 label={`View ${project.title.split(" —")[0]}`}
                 size="lg"
               />
