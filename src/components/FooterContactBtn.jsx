@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 
-export const FooterContactBtn = ({ button }) => {
+const FooterContactBtn = ({ button }) => {
   const [hovered, setHovered] = useState(false);
   return (
     <Link

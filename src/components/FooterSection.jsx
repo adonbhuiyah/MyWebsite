@@ -7,30 +7,51 @@ import { projectsList } from "./ProjectsSection";
 import { useState } from "react";
 const SocialLinks = [
   { label: "Telegram", url: "https://t.me/AdonBhuiyah" },
-  {
-    label: "X (formerly Twitter)",
-    url: "https://x.com/AdonBhuiyah",
-  },
   { label: "GitHub", url: "https://github.com/AdonBhuiyah" },
   { label: "GitLab", url: "https://gitlab.com/AdonBhuiyah" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/AdonBhuiyah" },
+  { label: "LinkedIn", url: "https://linkedin.com/in/AdonBhuiyah0" },
   { label: "Pinterest", url: "https://pinterest.com/AdonBhuiyah" },
   {
     label: "Facebook",
-    url: "https://www.facebook.com/AdonBhuiyah1",
+    url: "https://www.facebook.com/AdonBhuiyah",
   },
   { label: "Instagram", url: "https://instagram.com/AdonBhuiyah" },
   { label: "Threads", url: "https://threads.com/AdonBhuiyah" },
   { label: "Linktree", url: "https://linktr.ee/AdonBhuiyah" },
   { label: "Dribbble", url: "https://dribble.com/AdonBhuiyah" },
+  {
+    label: "X (Twitter)",
+    url: "https://x.com/AdonBhuiyah",
+  },
+  {
+    label: "Blue Sky",
+    url: "https://bsky.app/profile/adonr.dev",
+  },
+  {
+    label: "Stack Overflow",
+    url: "https://stackoverflow.com/users/29373446/adon-bhuiyah",
+  },
+
+  {
+    label: "Medium",
+    url: "https://medium.com/@AdonBhuiyah",
+  },
+  {
+    label: "Reddit",
+    url: "https://www.reddit.com/user/AdonBhuiyah",
+  },
+  {
+    label: "Hash Node",
+    url: "https://hashnode.com/@AdonBhuiyah",
+  },
 ];
 const FooterSection = () => {
   return (
     <section
       id="contact"
-      className="rounded-2xl bg-[#E8E8EA] px-4 pt-[80px] sm:rounded-3xl md:rounded-4xl md:pt-[120px] lg:rounded-[40px] lg:px-[50px] lg:pt-[100px] xl:w-full xl:rounded-[48px]"
+      className="rounded-[30px] bg-[#E8E8EA] px-4 pt-[80px] sm:flex sm:flex-col sm:items-center sm:justify-center sm:rounded-3xl md:rounded-4xl md:pt-[120px] lg:rounded-[40px] lg:px-[50px] lg:pt-[100px] xl:w-full xl:rounded-[48px]"
     >
-      <div className="grid grid-cols-1 gap-[40px] pb-10 sm:grid-cols-2 sm:px-8 lg:gap-[60px] xl:mx-auto xl:w-[1500px] xl:grid-cols-4 xl:gap-[80px]">
+      <div className="grid grid-cols-1 gap-[50px] pb-10 sm:grid-cols-[250px_250px] sm:px-8 md:grid-cols-[300px_300px] lg:grid-cols-[350px_350px] lg:gap-[60px] xl:w-[1500px] xl:grid-cols-[295px_153px_200px_130px] xl:justify-center xl:gap-[200px] xl:p-0">
         {/* this contact button is for small devices under 640px*/}
         <FooterContactBtn button="default" />
 
@@ -105,6 +126,7 @@ const FooterSection = () => {
       </div>
       {/* BIG GRAY COLOR LOGO  */}
       <svg
+        className="mt-10 sm:mt-14 md:mt-[72px] lg:mt-20"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         viewBox="2 0 115 30"

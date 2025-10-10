@@ -36,7 +36,7 @@ const AboutMeSection = () => {
   return (
     <section
       id="about-me"
-      className="mt-[100px] w-full rounded-[20px] bg-black px-6 py-[80px] md:rounded-[30px] md:py-[120px] lg:rounded-[40px] lg:px-[50px] lg:py-[150px] xl:px-[100px]"
+      className="mt-[100px] w-full rounded-[30px] bg-black px-6 py-[80px] md:rounded-[30px] md:py-[120px] lg:rounded-[40px] lg:px-[50px] lg:py-[150px] xl:px-[100px]"
     >
       <div className="lg:flex lg:gap-8 xl:gap-12 2xl:mx-auto 2xl:w-[1500px]">
         {/* this is the left side of the about me section */}
