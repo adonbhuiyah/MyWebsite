@@ -4,7 +4,6 @@ import FooterContactBtn from "./FooterContactBtn";
 import Link from "next/link";
 import { NavbarLinks } from "./NavbarSection";
 import { projectsList } from "./ProjectsSection";
-import { useState } from "react";
 const SocialLinks = [
   { label: "Telegram", url: "https://t.me/AdonBhuiyah" },
   { label: "GitHub", url: "https://github.com/AdonBhuiyah" },
@@ -43,6 +42,10 @@ const SocialLinks = [
   {
     label: "Hash Node",
     url: "https://hashnode.com/@AdonBhuiyah",
+  },
+  {
+    label: "Mastodon",
+    url: "https://mastodon.social/@AdonBhuiyah",
   },
 ];
 const FooterSection = () => {
